@@ -1,0 +1,113 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  padding: 40px 24px 70vh;
+  font-family: system-ui, sans-serif;
+  background: #f4f1ea;
+  color: #1c1917;
+  background: radial-gradient(
+    circle at right top,
+    #efd69b 15%,
+    #859dc3 40%,
+    #242e3c 75%
+  );
+}
+ 
+.moon{
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    box-shadow: -16px 18px 28px rgba(16, 18, 24, 0.55);
+    background: radial-gradient(circle at top right, #f4efe6 0%, #bdb7ae 46%, #3f3c39 100%);
+}
+
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+h1 {
+  margin-bottom: 8px;
+  font-size: 1.6rem;
+}
+
+.lead {
+  max-width: 42rem;
+  margin-bottom: 28px;
+  line-height: 1.5;
+  color: #44403c;
+}
+
+.compare {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+  align-items: flex-start;
+}
+
+section {
+  flex: 1 1 280px;
+}
+
+h2 {
+  margin-bottom: 6px;
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 1.15rem;
+}
+
+.note {
+  min-height: 4.4em;
+  margin-bottom: 12px;
+  line-height: 1.45;
+  color: #44403c;
+}
+
+.box {
+  height: 260px;
+  padding: 16px 18px;
+  overflow: auto;
+  border-radius: 12px;
+  color: #fff;
+  line-height: 1.55;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.7);
+
+  /* სურათი მხოლოდ ზედა ზოლია, დანარჩენი მუქი ფერია —
+     local-ზე გადახვევისას ზოლი ქრება, scroll-ზე რჩება.
+     fixed ამ ზომას ცვლის და სურათს მთელ ეკრანზე შლის. */
+  background-color: #1e293b;
+  background-image: url("file_example_WEBP_50kB.webp");
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-size: 50% 140px;
+}
+
+.box p + p {
+  margin-top: 14px;
+}
+
+/* პირველი ვარიანტი */
+.scroll {
+  background-attachment: scroll;
+}
+
+/* მეორე ვარიანტი */
+.local {
+  background-attachment: local;
+}
+
+/* მესამე ვარიანტი — სურათი ეკრანის ზომისაა, ყუთი მხოლოდ სარკმელია */
+.fixed {
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
